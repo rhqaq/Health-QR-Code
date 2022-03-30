@@ -11,6 +11,7 @@ shutil.rmtree(matplotlib.get_cachedir())
 all=[]
 
 for filename in ['随申码valid.csv','苏康码valid.csv','北京健康宝valid.csv','粤康码valid.csv','西安一码通valid.csv']:
+    filename = '../survey_data/data/'+ filename
     with open(filename,'r', encoding='utf-8') as fin:
         reader = csv.reader(fin)
         l = []
@@ -70,8 +71,8 @@ for t,title  in zip(t1,title_t1):
     plt.bar(x, y[4], bottom=y[0]+y[1]+y[2]+y[3], label='非常不符合',fc = 'tab:red', width = 0.5)
     plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05),  fancybox=True, ncol=5)
     plt.rcParams['font.sans-serif']=['SimHei']
-    plt.savefig(title)
-    # plt.show()
+    # plt.savefig(title)
+    plt.show()
 
 
 #
